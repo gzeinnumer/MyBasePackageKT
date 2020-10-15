@@ -71,6 +71,25 @@ abstract class DummyDao: BaseDao<DummyTable> {
 #### BaseListResponse
 You cal use this `Base` if you using [Retrofit](https://square.github.io/retrofit/) on your project as your `Http Client`.
 
+- JSON response example
+```json
+{
+   "status":"1",
+   "message":"Success dapat data",
+   "total":10,
+   "data":[
+      {
+         "id":1,
+         "name":"Zein"
+      },
+      {
+         "id":2,
+         "name":"GZeinNumer"
+      }
+   ]
+}
+```
+
 - Make Base Class
 ```kotlin
 data class BaseListResponse<T>(@SerializedName("status") @Expose val status: String,
@@ -96,6 +115,19 @@ interface ApiService {
 #
 #### BaseObjectResponse
 You can use this `Base` if you using [Retrofit](https://square.github.io/retrofit/) on your project as your `Http Client`.
+
+- JSON response example
+```json
+{
+   "status":"1",
+   "message":"Success dapat data",
+   "total":10,
+   "data":{
+      "id":2,
+      "name":"GZeinNumer"
+   }
+}
+```
 
 - Make Base Class
 ```kotlin
