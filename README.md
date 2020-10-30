@@ -150,6 +150,37 @@ interface ApiService {
 }
 ```
 
+#
+#### BaseActivity
+- Make Base Class
+```kotlin
+abstract class BaseActivity : AppCompatActivity() {
+
+    private val TAG = "BaseActivity"
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
+
+    protected fun onShowLoading() {
+    
+    }
+
+}
+```
+
+- Use Base Class
+```kotlin
+class MainActivity : BaseActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        
+        onShowLoading()
+    }
+}
+```
+
 ---
 
 ```
